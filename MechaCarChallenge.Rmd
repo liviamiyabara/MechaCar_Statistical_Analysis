@@ -9,7 +9,7 @@ output: html_notebook
 library(dplyr)
 ```
 ```{r}
-# Step: 4Import and read the csv file
+# Step 4: Import and read the csv file
 car_table <- read.csv('MechaCar_mpg.csv',check.names = F,stringsAsFactors = F)
 class(car_table)
 ```
