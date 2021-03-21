@@ -6,7 +6,7 @@ In this challenge we help AutosRUs and develop an analysis focused their newest 
 The goal of this week is to create analysis to help AutosRUs'upper management with actionable insights to improve the manufacturing cycle. 
 
 ## Summary:
-Please find below the summary from the statistical analysis: 
+Please find below the summary from the statistical analysis performed in this challenge. 
 
 ### Linear Regression to Predict MPG
  
@@ -45,14 +45,40 @@ Please find below the summary from the statistical analysis:
     
 ### T-Tests on Suspension Coils
 
+T-tests were performed to determine if all manufacturing lots and each lot individually are statistically different from the population mean of 1,500 pounds per square inch.
+Using a significance level (alpha) of 0.05 (the probability thershold of usualness) and analyzing the p-values from the t-test below, all of them are way larger than alpha, so the null hypotesis is true and the observed difference is due to random change and are not statistically different from the population mean of 1,500 pounds per square inch.
+
 T-test results: full sample
+
 ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_full_sample.JPG)
 
 T-test results: Lot 1
+
 ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_lot1.JPG)
 
 T-test results: Lot 2
+
 ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_lot2.JPG)
 
 T-test results: Lot 3
+
 ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_lot3.JPG)
+
+## Study Design: MechaCar vs Competition
+
+By using R and its statistical tools, a statistical study could be performed to compare the performance of MechaCar vehicles and other manufacturers. 
+
+* What metric or metrics are you going to test?
+    Since the goal of the study is to show differentiators from MechaCar and competitors, one analysis could be comparing the brand of the vehicle with the maintenance costs.
+
+* What is the null hypothesis or alternative hypothesis?
+    The null hypothesis is that the observed differences in maintance cost between OEMs (Original Equipment Manufacturer) is due to random chance and there is no significant difference between the groups.
+
+* What statistical test would you use to test the hypothesis? And why?
+    I would use the ANOVA test since:
+        * The dependent value is numerical and continuous (maintenance cost), and the independent variable is categorical (car manufacturer)
+        * The dependent variable is considered to be normally distributed
+        * The variance among each group should be very similar
+
+* What data is needed to run the statistical test?
+    Ideally a large sample is prefferable with a good distribution of different car types (SUV, pick up, sedan, etc) and age, we will need the information from the car manufacturer and also the total maintenance costs from the car owner 
