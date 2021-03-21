@@ -79,9 +79,9 @@ By using R and its statistical tools, a study could be performed to compare the 
 * What statistical test would you use to test the hypothesis? And why?
 
     I would use the ANOVA test since:
-      * The dependent value is numerical and continuous (maintenance cost), and the independent variable is categorical (car manufacturer)
-      * The dependent variable is considered to be normally distributed
-      * The variance among each group should be very similar
+    * The dependent value is numerical and continuous (maintenance cost), and the independent variable is categorical (car manufacturer)
+    * The dependent variable is considered to be normally distributed
+    * The variance among each group should be very similar
 
 * What data is needed to run the statistical test?
     
