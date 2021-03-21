@@ -3,6 +3,7 @@ title: "MechaCarChallenge"
 output: html_notebook
 ---
 
+DELIVERABLE 1: Linear Regression to Predict MPG
 
 ```{r}
 # Step 3: Library for dplyr package
@@ -21,5 +22,28 @@ lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AW
 ```{r}
 # Step 6: determine the p-value and the r-squared value for the linear regression model
 summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, car_table)) #generate summary statistics
+```
+
+Deliverable 2: Create Visualizations for the Trip Analysis
+
+```{r}
+# Step 2: Import and read the csv file
+coil_table <- read.csv('Suspension_Coil.csv',stringsAsFactors = F)
+class(coil_table)
+```
+
+```{r}
+# Step 3: Write an RScript that creates a total_summary dataframe using the summarize() function to get the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+total_summary <- coil_table %>% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI)) 
+print(total_summary)
+```
+
+
+```{r}
+# Step 4: Write an RScript that creates a lot_summary dataframe using the group_by() and the summarize() functions to group each manufacturing lot by the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+lot_summary <- coil_table %>% group_by(Manufacturing_Lot) %>% 
+              summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+print(lot_summary)
+```
 ```
 

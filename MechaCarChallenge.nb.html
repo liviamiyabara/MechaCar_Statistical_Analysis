@@ -215,6 +215,7 @@ pre code {
 
 
 <!-- rnb-text-begin -->
+<p>DELIVERABLE 1: Linear Regression to Predict MPG</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDM6IExpYnJhcnkgZm9yIGRwbHlyIHBhY2thZ2VcbmxpYnJhcnkoZHBseXIpXG5gYGAifQ== -->
@@ -223,8 +224,8 @@ library(dplyr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwOiA0SW1wb3J0IGFuZCByZWFkIHRoZSBjc3YgZmlsZVxuY2FyX3RhYmxlIDwtIHJlYWQuY3N2KCdNZWNoYUNhcl9tcGcuY3N2JyxjaGVjay5uYW1lcyA9IEYsc3RyaW5nc0FzRmFjdG9ycyA9IEYpXG5jbGFzcyhjYXJfdGFibGUpXG5gYGAifQ== -->
-<pre class="r"><code># Step: 4Import and read the csv file
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDQ6IEltcG9ydCBhbmQgcmVhZCB0aGUgY3N2IGZpbGVcbmNhcl90YWJsZSA8LSByZWFkLmNzdignTWVjaGFDYXJfbXBnLmNzdicsY2hlY2submFtZXMgPSBGLHN0cmluZ3NBc0ZhY3RvcnMgPSBGKVxuY2xhc3MoY2FyX3RhYmxlKVxuYGBgIn0= -->
+<pre class="r"><code># Step 4: Import and read the csv file
 car_table &lt;- read.csv(&#39;MechaCar_mpg.csv&#39;,check.names = F,stringsAsFactors = F)
 class(car_table)</code></pre>
 <!-- rnb-source-end -->
@@ -282,9 +283,56 @@ F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+<p>Deliverable 2: Create Visualizations for the Trip Analysis</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDI6IEltcG9ydCBhbmQgcmVhZCB0aGUgY3N2IGZpbGVcbmNvaWxfdGFibGUgPC0gcmVhZC5jc3YoJ1N1c3BlbnNpb25fQ29pbC5jc3YnLHN0cmluZ3NBc0ZhY3RvcnMgPSBGKVxuY2xhc3MoY29pbF90YWJsZSlcbmBgYCJ9 -->
+<pre class="r"><code># Step 2: Import and read the csv file
+coil_table &lt;- read.csv(&#39;Suspension_Coil.csv&#39;,stringsAsFactors = F)
+class(coil_table)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZGF0YS5mcmFtZVwiXG4ifQ== -->
+<pre><code>[1] &quot;data.frame&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDM6IFdyaXRlIGFuIFJTY3JpcHQgdGhhdCBjcmVhdGVzIGEgdG90YWxfc3VtbWFyeSBkYXRhZnJhbWUgdXNpbmcgdGhlIHN1bW1hcml6ZSgpIGZ1bmN0aW9uIHRvIGdldCB0aGUgbWVhbiwgbWVkaWFuLCB2YXJpYW5jZSwgYW5kIHN0YW5kYXJkIGRldmlhdGlvbiBvZiB0aGUgc3VzcGVuc2lvbiBjb2ls4oCZcyBQU0kgY29sdW1uLlxudG90YWxfc3VtbWFyeSA8LSBjb2lsX3RhYmxlICU+JSBzdW1tYXJpemUoTWVhbj1tZWFuKFBTSSksIE1lZGlhbj1tZWRpYW4oUFNJKSwgVmFyaWFuY2U9dmFyKFBTSSksIFNEPXNkKFBTSSkpIFxucHJpbnQodG90YWxfc3VtbWFyeSlcbmBgYCJ9 -->
+<pre class="r"><code># Step 3: Write an RScript that creates a total_summary dataframe using the summarize() function to get the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+total_summary &lt;- coil_table %&gt;% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI)) 
+print(total_summary)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6NCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZlssNF0gWzEgeCA0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJndHlpVERtaXVCaVlHQmdabUFCUW1aV0lKT0J6VG5BME1qVWlJR0JoUW5JWXdTS2M0TG9DcUFxWVNDREJZajVRQUlPMDdQbGRnUytia1h3Q3hpZ0FNTDNWNTNzOWsvbEo1d3ZQNGxudjUrcU1wckJySG1KdWFuRlFJWUEySENJSUl0dmFtSWVsTTNtbTVxU0NlZHhoQ1VXQVhuSnFWQStVN0FMbW9HY1JmbmxlakJEZWNFU1lJeHFhM0pPWWpITVZwZ2dWMHBpU2FKZVdoRlFMNUQzRDAwTGUzNUJTV1orSGxBVEV5Z2NXTkUwTXhhaENRaVU1b0Zja2FLYm5GR2FsNjFyYUFteUFlb2NCbFNud2Rrc0VEdVova1BOWW9XRlFXcGVlbVllek0rc09ZbEpxVGxRRGgvUXUyRGY2aFVVWmVhVndMd0NGQzNXSzhrdlNZU3A0MHJPejRHSmdEM0g4QThBV2NyNTRRQUNBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Mean"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Median"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Variance"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["SD"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1498.78","2":"1500","3":"62.29356","4":"7.892627"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDQ6IFdyaXRlIGFuIFJTY3JpcHQgdGhhdCBjcmVhdGVzIGEgbG90X3N1bW1hcnkgZGF0YWZyYW1lIHVzaW5nIHRoZSBncm91cF9ieSgpIGFuZCB0aGUgc3VtbWFyaXplKCkgZnVuY3Rpb25zIHRvIGdyb3VwIGVhY2ggbWFudWZhY3R1cmluZyBsb3QgYnkgdGhlIG1lYW4sIG1lZGlhbiwgdmFyaWFuY2UsIGFuZCBzdGFuZGFyZCBkZXZpYXRpb24gb2YgdGhlIHN1c3BlbnNpb24gY29pbOKAmXMgUFNJIGNvbHVtbi5cbmxvdF9zdW1tYXJ5IDwtIGNvaWxfdGFibGUgJT4lIGdyb3VwX2J5KE1hbnVmYWN0dXJpbmdfTG90KSAlPiUgXG4gICAgICAgICAgICAgIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSlcbnByaW50KGxvdF9zdW1tYXJ5KVxuYGBgIn0= -->
+<pre class="r"><code># Step 4: Write an RScript that creates a lot_summary dataframe using the group_by() and the summarize() functions to group each manufacturing lot by the mean, median, variance, and standard deviation of the suspension coil’s PSI column.
+lot_summary &lt;- coil_table %&gt;% group_by(Manufacturing_Lot) %&gt;% 
+              summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+print(lot_summary)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MywibmNvbCI6NSwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyIzIHggNSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJndHlpVERtaXVCaVlHQmdabUFCUW1aV0lKT0J6VG5BME1qVWlJR0JoUW5JWXdTS2M0TG9DcUFxWVNBRHBFWUFxZ1Vrd2VLVFgyS0l4RFpDWWhzRGFUNlFXb2ZwQlNDakdZRDBHU0E0NnpBOW9UOUc0K3RoTFBKUU9vc0JDc0R5OXU4akx2dzYxbjdOUWZiQmNuMVd5d3FIVkUvMVZ5NEtzeER5cTMvcFNSOE5kV0M5YXpHNVp4NmpnNWFrZStUSFRrODBUN0RtSmVhbUZrTTl3QW9WRlBSTnpDdE5TMHd1S1MzS3pFdVBCem9iNWdQZjFNUThLSnZOTnpVbEU4N2pDRXNzQXZLU1U2RjhwbUFYTkpzNGkvTEw5V0MyOFlLVU5BQ0ovLy8vLzBWM1VuSk9ZakhNU1RCQnJwVEVra1M5dENLZ2ZpRHZINW9XOXZ5Q2tzejhQS0FtSnVRSWdjZFVFWnFBUUdrZXlDVXB1c2tacFhuWnVrWUdJQnZBOGhEQUMyVXpJN0ZaSVhZeS9VY0xMTGJVdlBUTVBKaS9XWE1TazFKem9CdytvSmZCUHRZckFBWWtMQkM1Z0tMRmVpWDVKWWt3ZFZ6SitUa3dFYkRuR1A0QkFLeWRWdVNKQWdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Manufacturing_Lot"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Mean"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Median"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Variance"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["SD"],"name":[5],"type":["dbl"],"align":["right"]}],"data":[{"1":"Lot1","2":"1500.00","3":"1500.0","4":"0.9795918","5":"0.9897433"},{"1":"Lot2","2":"1500.20","3":"1500.0","4":"7.4693878","5":"2.7330181"},{"1":"Lot3","2":"1496.14","3":"1498.5","4":"170.2861224","5":"13.0493725"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>```</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIk1lY2hhQ2FyQ2hhbGxlbmdlIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KDQpgYGB7cn0NCiMgU3RlcCAzOiBMaWJyYXJ5IGZvciBkcGx5ciBwYWNrYWdlDQpsaWJyYXJ5KGRwbHlyKQ0KYGBgDQpgYGB7cn0NCiMgU3RlcCA0OiBJbXBvcnQgYW5kIHJlYWQgdGhlIGNzdiBmaWxlDQpjYXJfdGFibGUgPC0gcmVhZC5jc3YoJ01lY2hhQ2FyX21wZy5jc3YnLGNoZWNrLm5hbWVzID0gRixzdHJpbmdzQXNGYWN0b3JzID0gRikNCmNsYXNzKGNhcl90YWJsZSkNCmBgYA0KYGBge3J9DQojIFNldHAgNTogUGVyZm9ybSBsaW5lYXIgZnVuY3Rpb24NCmxtKG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgY2FyX3RhYmxlKSAjZ2VuZXJhdGUgbXVsdGlwbGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWwNCmBgYA0KDQpgYGB7cn0NCiMgU3RlcCA2OiBkZXRlcm1pbmUgdGhlIHAtdmFsdWUgYW5kIHRoZSByLXNxdWFyZWQgdmFsdWUgZm9yIHRoZSBsaW5lYXIgcmVncmVzc2lvbiBtb2RlbA0Kc3VtbWFyeShsbShtcGcgfiB2ZWhpY2xlX2xlbmd0aCArIHZlaGljbGVfd2VpZ2h0ICsgc3BvaWxlcl9hbmdsZSArIGdyb3VuZF9jbGVhcmFuY2UgKyBBV0QsIGNhcl90YWJsZSkpICNnZW5lcmF0ZSBzdW1tYXJ5IHN0YXRpc3RpY3MNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIk1lY2hhQ2FyQ2hhbGxlbmdlIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCg0KREVMSVZFUkFCTEUgMTogTGluZWFyIFJlZ3Jlc3Npb24gdG8gUHJlZGljdCBNUEcNCg0KYGBge3J9DQojIFN0ZXAgMzogTGlicmFyeSBmb3IgZHBseXIgcGFja2FnZQ0KbGlicmFyeShkcGx5cikNCmBgYA0KYGBge3J9DQojIFN0ZXAgNDogSW1wb3J0IGFuZCByZWFkIHRoZSBjc3YgZmlsZQ0KY2FyX3RhYmxlIDwtIHJlYWQuY3N2KCdNZWNoYUNhcl9tcGcuY3N2JyxjaGVjay5uYW1lcyA9IEYsc3RyaW5nc0FzRmFjdG9ycyA9IEYpDQpjbGFzcyhjYXJfdGFibGUpDQpgYGANCmBgYHtyfQ0KIyBTZXRwIDU6IFBlcmZvcm0gbGluZWFyIGZ1bmN0aW9uDQpsbShtcGcgfiB2ZWhpY2xlX2xlbmd0aCArIHZlaGljbGVfd2VpZ2h0ICsgc3BvaWxlcl9hbmdsZSArIGdyb3VuZF9jbGVhcmFuY2UgKyBBV0QsIGNhcl90YWJsZSkgI2dlbmVyYXRlIG11bHRpcGxlIGxpbmVhciByZWdyZXNzaW9uIG1vZGVsDQpgYGANCg0KYGBge3J9DQojIFN0ZXAgNjogZGV0ZXJtaW5lIHRoZSBwLXZhbHVlIGFuZCB0aGUgci1zcXVhcmVkIHZhbHVlIGZvciB0aGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWwNCnN1bW1hcnkobG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBjYXJfdGFibGUpKSAjZ2VuZXJhdGUgc3VtbWFyeSBzdGF0aXN0aWNzDQpgYGANCg0KRGVsaXZlcmFibGUgMjogQ3JlYXRlIFZpc3VhbGl6YXRpb25zIGZvciB0aGUgVHJpcCBBbmFseXNpcw0KDQpgYGB7cn0NCiMgU3RlcCAyOiBJbXBvcnQgYW5kIHJlYWQgdGhlIGNzdiBmaWxlDQpjb2lsX3RhYmxlIDwtIHJlYWQuY3N2KCdTdXNwZW5zaW9uX0NvaWwuY3N2JyxzdHJpbmdzQXNGYWN0b3JzID0gRikNCmNsYXNzKGNvaWxfdGFibGUpDQpgYGANCg0KYGBge3J9DQojIFN0ZXAgMzogV3JpdGUgYW4gUlNjcmlwdCB0aGF0IGNyZWF0ZXMgYSB0b3RhbF9zdW1tYXJ5IGRhdGFmcmFtZSB1c2luZyB0aGUgc3VtbWFyaXplKCkgZnVuY3Rpb24gdG8gZ2V0IHRoZSBtZWFuLCBtZWRpYW4sIHZhcmlhbmNlLCBhbmQgc3RhbmRhcmQgZGV2aWF0aW9uIG9mIHRoZSBzdXNwZW5zaW9uIGNvaWzigJlzIFBTSSBjb2x1bW4uDQp0b3RhbF9zdW1tYXJ5IDwtIGNvaWxfdGFibGUgJT4lIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSkgDQpwcmludCh0b3RhbF9zdW1tYXJ5KQ0KYGBgDQoNCg0KYGBge3J9DQojIFN0ZXAgNDogV3JpdGUgYW4gUlNjcmlwdCB0aGF0IGNyZWF0ZXMgYSBsb3Rfc3VtbWFyeSBkYXRhZnJhbWUgdXNpbmcgdGhlIGdyb3VwX2J5KCkgYW5kIHRoZSBzdW1tYXJpemUoKSBmdW5jdGlvbnMgdG8gZ3JvdXAgZWFjaCBtYW51ZmFjdHVyaW5nIGxvdCBieSB0aGUgbWVhbiwgbWVkaWFuLCB2YXJpYW5jZSwgYW5kIHN0YW5kYXJkIGRldmlhdGlvbiBvZiB0aGUgc3VzcGVuc2lvbiBjb2ls4oCZcyBQU0kgY29sdW1uLg0KbG90X3N1bW1hcnkgPC0gY29pbF90YWJsZSAlPiUgZ3JvdXBfYnkoTWFudWZhY3R1cmluZ19Mb3QpICU+JSANCiAgICAgICAgICAgICAgc3VtbWFyaXplKE1lYW49bWVhbihQU0kpLCBNZWRpYW49bWVkaWFuKFBTSSksIFZhcmlhbmNlPXZhcihQU0kpLCBTRD1zZChQU0kpKQ0KcHJpbnQobG90X3N1bW1hcnkpDQpgYGANCmBgYA0KDQo=</div>
 
 
 
