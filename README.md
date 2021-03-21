@@ -6,6 +6,7 @@ In this challenge we help AutosRUs and develop an analysis focused their newest 
 The goal of this week is to create analysis to help AutosRUs'upper management with actionable insights to improve the manufacturing cycle. 
 
 ## Summary:
+Please find below the summary from the statistical analysis: 
 
 ### Linear Regression to Predict MPG
  
@@ -29,16 +30,29 @@ The goal of this week is to create analysis to help AutosRUs'upper management wi
 
     ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/linear_regression_summary_stats_r2.JPG)
 
-    ### Summary Statistics on Suspension Coils
+### Summary Statistics on Suspension Coils
 
-    * The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
+* The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
 
-        Analyzing the summary data below, the PSI variance is 62.29, below the 100 from the specifications, so the manufacturing data meet this design specification.
+    Analyzing the summary data below, the PSI variance is 62.29, below the 100 from the specifications, so the manufacturing data meet this design specification.
 
-        ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/total_summary.JPG)
+    ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/total_summary.JPG)
 
-        In addition to that, when we analyze the data broken down by the manufacturing lot, we can see that the variance in Lot 3 exceeeds the threshold from the design expetations since 170.27 is higher than 100. 
-        This can indicate that the manufacturing issue is due to problems in the lot 3 of the production. Lot 1 and 2 passes the deign specifications. 
+    In addition to that, when we analyze the data broken down by the manufacturing lot, we can see that the variance in Lot 3 exceeeds the threshold from the design expetations since 170.27 is higher than 100. 
+    This can indicate that the manufacturing issue is due to problems in the lot 3 of the production. Lot 1 and 2 passes the deign specifications. 
 
-        ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/lot_summary.JPG)
+    ![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/lot_summary.JPG)
     
+### T-Tests on Suspension Coils
+
+T-test results: full sample
+![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_full_sample.JPG)
+
+T-test results: Lot 1
+![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_lot1.JPG)
+
+T-test results: Lot 2
+![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_lot2.JPG)
+
+T-test results: Lot 3
+![ScreenShot](https://github.com/liviamiyabara/MechaCar_Statistical_Analysis/blob/main/Resources/t_test_lot3.JPG)
