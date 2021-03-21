@@ -2,7 +2,7 @@
 Module 15: Statistics and R
 
 ## Overview
-In this challenge we help AutosRUs and develop an analysis focused their newest car prototype. The company is having issues with the production and it is blocking the manufacturing progress. 
+In this challenge we help AutosRUs and develop an analysis for their newest car prototype. The company is having issues with the production and it is blocking the manufacturing progress. 
 The goal of this week is to create analysis to help AutosRUs'upper management with actionable insights to improve the manufacturing cycle. 
 
 ## Summary:
